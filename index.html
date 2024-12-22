@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Map & Global Chat</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <header>
+    <h1>User Map & Global Chat</h1>
+    <nav>
+      <a href="#map">Map</a>
+      <a href="#chat">Global Chat</a>
+      <a href="#profile">Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- User Registration/Login -->
+    <section id="register">
+      <h2>Create an Account</h2>
+      <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="profilePic">Profile Picture:</label>
+        <input type="file" id="profilePic" name="profilePic" accept="image/*" required>
+        
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <!-- User Map -->
+    <section id="map">
+      <h2>User Map</h2>
+      <div id="mapContainer" style="height: 500px;"></div>
+    </section>
+
+    <!-- Global Chat -->
+    <section id="chat">
+      <h2>Global Chat</h2>
+      <div id="chatBox">
+        <div id="messages"></div>
+        <div id="chatInput">
+          <input type="text" id="chatMessage" placeholder="Type a message..." />
+          <button id="sendMessage">Send</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- User Profile -->
+    <section id="profile">
+      <h2>Your Profile</h2>
+      <div id="profileInfo">
+        <img id="profileImage" src="default-profile.png" alt="Profile Picture">
+        <p id="profileName">Username: <span>Guest</span></p>
+        <p id="profileLocation">Location: <span>Unknown</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 User Map & Global Chat</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
